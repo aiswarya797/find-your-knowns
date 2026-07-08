@@ -12,6 +12,7 @@
   <a href="#install">Install</a> |
   <a href="#workflows">Workflows</a> |
   <a href="#examples">Examples</a> |
+  <a href="#templates">Templates</a> |
   <a href="#license">License</a>
 </p>
 
@@ -55,18 +56,26 @@ Skip it for tiny direct changes, ordinary code review, bug review, security revi
 
 ## Install
 
-Clone the repository:
+Fast path:
 
 ```bash
 git clone https://github.com/aiswarya797/find-your-knowns.git
-```
-
-For skill-folder hosts, copy the skill directory:
-
-```bash
 mkdir -p "<agent-skills-dir>"
 cp -R "find-your-knowns/skills/find-your-knowns" "<agent-skills-dir>/"
 ```
+
+Then ask your agent:
+
+```text
+Use find-your-knowns before planning this feature.
+```
+
+Install details:
+
+- Claude Code, Codex/manual loading, Cursor, and instruction-only agents:
+  [docs/install.md](docs/install.md)
+- Optional Cursor rule:
+  [.cursor/rules/find-your-knowns.mdc](.cursor/rules/find-your-knowns.mdc)
 
 For instruction-only agents, load:
 
@@ -81,6 +90,8 @@ Use the workflow at find-your-knowns/skills/find-your-knowns before planning thi
 ```
 
 ## Examples
+
+Prompts:
 
 ```text
 Use find-your-knowns. I need to add passkey login, but I have not worked in this auth module before.
@@ -102,6 +113,26 @@ Use find-your-knowns. The migration plan assumed one account per workspace, but 
 Use find-your-knowns. Explain this branch before merge and quiz me on the risks.
 ```
 
+Sample outputs:
+
+- [Blindspot pass](examples/blindspot-pass.md)
+- [Design directions](examples/design-directions.md)
+- [Reference hunt](examples/reference-hunt.md)
+- [Implementation notes](examples/implementation-notes.md)
+- [Buy-in doc](examples/buy-in-doc.md)
+- [Change quiz](examples/change-quiz.md)
+
+## Templates
+
+Reusable short templates live in [templates/](templates/):
+
+- [Blindspot pass](templates/blindspot-pass.md)
+- [Design directions](templates/design-directions.md)
+- [Reference hunt](templates/reference-hunt.md)
+- [Implementation notes](templates/implementation-notes.md)
+- [Buy-in doc](templates/buy-in-doc.md)
+- [Change quiz](templates/change-quiz.md)
+
 ## Package Layout
 
 ```text
@@ -110,6 +141,11 @@ find-your-knowns/
   LICENSE
   assets/
     logo.svg
+  docs/
+    install.md
+  examples/
+  templates/
+  .cursor/rules/
   skills/
     find-your-knowns/
       LICENSE
@@ -117,6 +153,14 @@ find-your-knowns/
       references/
         <focused workflows loaded by SKILL.md>
 ```
+
+## Validation
+
+```bash
+npm run validate
+```
+
+Validation runs markdown lint, stale package-slug checks, and `git diff --check`.
 
 ## Attribution
 

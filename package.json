@@ -1,0 +1,20 @@
+{
+  "name": "find-your-knowns",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Agent-agnostic workflow skill for surfacing hidden unknowns before implementation.",
+  "scripts": {
+    "lint:md": "npx --yes markdownlint-cli2 \"**/*.md\" \"!node_modules\"",
+    "check:slugs": "node scripts/check-stale-slugs.mjs",
+    "validate": "npm run lint:md && npm run check:slugs && git diff --check"
+  },
+  "keywords": [
+    "ai-agents",
+    "coding-agents",
+    "skills",
+    "workflow",
+    "unknowns",
+    "planning"
+  ],
+  "license": "MIT"
+}

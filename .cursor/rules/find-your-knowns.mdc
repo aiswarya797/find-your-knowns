@@ -1,0 +1,43 @@
+---
+description: Route vague or high-uncertainty implementation work through Find Your Knowns before coding.
+globs:
+  - "**/*"
+alwaysApply: false
+---
+
+# Find Your Knowns
+
+Use this rule when a request is vague, unfamiliar, design-heavy, reference-based,
+high-risk, long-running, or likely to hide product, API, data, security, or
+operational constraints.
+
+Load and follow:
+
+```text
+skills/find-your-knowns/SKILL.md
+```
+
+Important boundaries:
+
+- Use Find Your Knowns to discover missing context before implementation.
+- Do not use it as ordinary code review, bug review, security review, or PR
+  defect finding.
+- Inspect the actual repo or product surface before ranking risks.
+- Ask one high-impact question at a time only when the answer would change the
+  implementation.
+- Produce a concrete artifact: risk table, direction set, reference map,
+  implementation note, buy-in doc, or change quiz.
+
+Useful prompts:
+
+```text
+Use Find Your Knowns before planning this feature.
+```
+
+```text
+Run a blindspot pass on this module before implementation.
+```
+
+```text
+Show design directions before wiring the real UI.
+```
