@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="assets/logo.svg" width="112" height="112" alt="Finding Your Unknowns logo">
+  <img src="assets/logo.svg" width="112" height="112" alt="Find Your Knowns logo">
 </p>
 
-<h1 align="center">Finding Your Unknowns</h1>
+<h1 align="center">Find Your Knowns</h1>
 
 <p align="center">
-  <strong>AI coding agent skill for blindspot discovery, implementation planning, and pre-merge understanding.</strong>
+  <strong>AI coding agent skill for turning hidden unknowns into actionable knowns before implementation.</strong>
 </p>
 
 <p align="center">
@@ -17,11 +17,11 @@
 
 ## What This Is
 
-`finding-your-unknowns` is a Markdown-first agent skill for Claude Code, OpenAI Codex, Cursor, and other skill-aware coding agents.
+`find-your-knowns` is a Markdown-first agent skill for Claude Code, OpenAI Codex, Cursor, and other skill-aware coding agents.
 
 It helps agents find hidden requirements before they guess: unfamiliar codebase constraints, vague product taste, risky API or data decisions, plan-vs-reality drift, reviewer objections, and merge-time understanding gaps.
 
-The package uses one router skill plus focused reference workflows. The router lives at `skills/finding-your-unknowns/SKILL.md`; each workflow is loaded only when relevant.
+The package uses one router skill plus focused reference workflows. The router lives at `skills/find-your-knowns/SKILL.md`; each workflow is loaded only when relevant.
 
 ## Why Use It
 
@@ -58,60 +58,60 @@ Skip it for tiny direct changes, ordinary code review, bug review, security revi
 Clone the repository:
 
 ```bash
-git clone https://github.com/aiswarya797/finding-your-unknowns.git
+git clone https://github.com/aiswarya797/find-your-knowns.git
 ```
 
 For skill-folder hosts, copy the skill directory:
 
 ```bash
 mkdir -p "<agent-skills-dir>"
-cp -R "finding-your-unknowns/skills/finding-your-unknowns" "<agent-skills-dir>/"
+cp -R "find-your-knowns/skills/find-your-knowns" "<agent-skills-dir>/"
 ```
 
 For instruction-only agents, load:
 
 ```text
-skills/finding-your-unknowns/SKILL.md
+skills/find-your-knowns/SKILL.md
 ```
 
 For repo-local use, keep this repository in your project and invoke:
 
 ```text
-Use the workflow at finding-your-unknowns/skills/finding-your-unknowns before planning this feature.
+Use the workflow at find-your-knowns/skills/find-your-knowns before planning this feature.
 ```
 
 ## Examples
 
 ```text
-Use finding-your-unknowns. I need to add passkey login, but I have not worked in this auth module before.
+Use find-your-knowns. I need to add passkey login, but I have not worked in this auth module before.
 ```
 
 ```text
-Use finding-your-unknowns. Make this dashboard feel cleaner and more production-ready, but show me directions before wiring anything.
+Use find-your-knowns. Make this dashboard feel cleaner and more production-ready, but show me directions before wiring anything.
 ```
 
 ```text
-Use finding-your-unknowns. Recreate the retry semantics from vendor/rate-limiter in our TypeScript client, but prove you understood the reference first.
+Use find-your-knowns. Recreate the retry semantics from vendor/rate-limiter in our TypeScript client, but prove you understood the reference first.
 ```
 
 ```text
-Use finding-your-unknowns. The migration plan assumed one account per workspace, but the schema allows many.
+Use find-your-knowns. The migration plan assumed one account per workspace, but the schema allows many.
 ```
 
 ```text
-Use finding-your-unknowns. Explain this branch before merge and quiz me on the risks.
+Use find-your-knowns. Explain this branch before merge and quiz me on the risks.
 ```
 
 ## Package Layout
 
 ```text
-finding-your-unknowns/
+find-your-knowns/
   README.md
   LICENSE
   assets/
     logo.svg
   skills/
-    finding-your-unknowns/
+    find-your-knowns/
       LICENSE
       SKILL.md
       references/

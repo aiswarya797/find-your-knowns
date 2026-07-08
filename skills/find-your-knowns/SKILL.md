@@ -1,9 +1,9 @@
 ---
-name: finding-your-unknowns
-description: Surface hidden unknowns before, during, and after implementation work. Use for vague, high-uncertainty, unfamiliar, high-stakes, or long-running tasks where the agent may otherwise guess through missing context. Do not use for ordinary code review, bug review, security review, or PR defect-finding requests.
+name: find-your-knowns
+description: Turn hidden unknowns into actionable knowns before, during, and after implementation work. Use for vague, high-uncertainty, unfamiliar, high-stakes, or long-running tasks where the agent may otherwise guess through missing context. Do not use for ordinary code review, bug review, security review, or PR defect-finding requests.
 ---
 
-# Finding Your Unknowns
+# Find Your Knowns
 
 Use this routed workflow to close the gap between the user's "map" and the real "territory" before making risky implementation choices. The map is the prompt, ticket, plan, or reference the user gave you. The territory is the actual repo, product behavior, design system, data, APIs, production constraints, and tacit user expectations.
 
