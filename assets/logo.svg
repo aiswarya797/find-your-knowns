@@ -1,0 +1,13 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Finding Your Unknowns logo</title>
+  <desc id="desc">A simple map grid and route marker representing unknown discovery.</desc>
+  <rect width="160" height="160" rx="36" fill="#0F172A"/>
+  <path d="M38 48H122V112H38V48Z" fill="#F8FAFC"/>
+  <path d="M66 48V112M94 48V112M38 69.5H122M38 90.5H122" stroke="#CBD5E1" stroke-width="4"/>
+  <path d="M48 101C60 82 72 94 80 76C88 58 104 70 114 57" stroke="#2563EB" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="48" cy="101" r="8" fill="#10B981"/>
+  <circle cx="114" cy="57" r="8" fill="#F59E0B"/>
+  <circle cx="80" cy="76" r="18" fill="#0F172A"/>
+  <path d="M75 72C75 66 79 62 85 62C91 62 95 66 95 72C95 80 85 80 85 87" stroke="#F8FAFC" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="85" cy="96" r="3.5" fill="#F8FAFC"/>
+</svg>

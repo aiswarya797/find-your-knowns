@@ -1,0 +1,6 @@
+.DS_Store
+.unknowns/
+design-directions/
+change-report.html
+implementation-notes.md
+*.tmp

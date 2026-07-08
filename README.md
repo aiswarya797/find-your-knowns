@@ -1,98 +1,133 @@
-# finding-your-unknowns
+<p align="center">
+  <img src="assets/logo.svg" width="112" height="112" alt="Finding Your Unknowns logo">
+</p>
 
-`finding-your-unknowns` is a reusable agent workflow package for surfacing hidden uncertainty before, during, and after implementation.
+<h1 align="center">Finding Your Unknowns</h1>
 
-The package is inspired by Thariq Shihipar's "A Field Guide to Fable: Finding Your Unknowns" and the companion "Know your unknowns" examples:
+<p align="center">
+  <strong>AI coding agent skill for blindspot discovery, implementation planning, and pre-merge understanding.</strong>
+</p>
 
-- Article: https://x.com/trq212/status/2073100352921215386
-- Companion examples: https://thariqs.github.io/html-effectiveness/unknowns/
+<p align="center">
+  <a href="#install">Install</a> |
+  <a href="#workflows">Workflows</a> |
+  <a href="#examples">Examples</a> |
+  <a href="#license">License</a>
+</p>
 
-The instructions in this package are original and written to be agent-agnostic. The `SKILL.md` frontmatter is included because many skill-aware hosts use it for discovery, but the workflow also works as plain Markdown instructions.
+## What This Is
 
-## Structure
+`finding-your-unknowns` is a Markdown-first agent skill for Claude Code, OpenAI Codex, Cursor, and other skill-aware coding agents.
 
-```text
-know your unknowns/
-  README.md
-  LICENSE
-  skills/
-    finding-your-unknowns/
-      LICENSE
-      SKILL.md
-      references/
-        <playbooks loaded on demand by SKILL.md>
+It helps agents find hidden requirements before they guess: unfamiliar codebase constraints, vague product taste, risky API or data decisions, plan-vs-reality drift, reviewer objections, and merge-time understanding gaps.
+
+The package uses one router skill plus focused reference workflows. The router lives at `skills/finding-your-unknowns/SKILL.md`; each workflow is loaded only when relevant.
+
+## Why Use It
+
+Use this skill when a coding task is vague, unfamiliar, high-stakes, design-heavy, reference-based, long-running, or expensive to redo.
+
+Skip it for tiny direct changes, ordinary code review, bug review, security review, and PR defect-finding. Those need review-specific methods, not unknown-discovery routing.
+
+## Workflows
+
+| Phase | Workflow | Use it for |
+| --- | --- | --- |
+| Before | Blindspot pass | Hidden constraints in unfamiliar code or domains |
+| Before | Teach me my unknowns | Missing vocabulary, standards, and quality criteria |
+| Before | Design directions | Divergent UX, product, or visual directions |
+| Before | Mock before wire | Throwaway shape validation before real implementation |
+| Before | Effort-axis brainstorm | Options ranked by effort, risk, and proof |
+| Before | Interview | One high-impact decision question at a time |
+| Before | Reference hunt | Preserve behavior from existing code, products, or specs |
+| Before | Tweakable plan | Implementation plans ordered by likely user veto |
+| During | Implementation notes | Scoped plan-vs-reality decisions during execution |
+| After | Buy-in doc | Reviewer and stakeholder understanding |
+| After | Change quiz | Pre-merge comprehension of a large change |
+
+## What Makes This Package Different
+
+- Full 11-workflow coverage without requiring interactive HTML artifacts.
+- Explicit trigger guard against hijacking normal code review or security review.
+- Scoped implementation notes that avoid random repo-root files.
+- Skill-folder `LICENSE`, so manual installs preserve license metadata.
+- Agent-agnostic Markdown: useful as a formal skill or plain instructions.
+
+## Install
+
+Clone the repository:
+
+```bash
+git clone https://github.com/aiswarya797/finding-your-unknowns.git
 ```
 
-## Installation
-
-Use the integration style your agent host supports:
-
-- **Skill-folder hosts**: copy `skills/finding-your-unknowns/` into the host's skill, workflow, or instruction-library directory. This folder includes its own `LICENSE` so skill-only installs preserve license metadata; attribution is also included in `SKILL.md`.
-- **Instruction-only agents**: load `skills/finding-your-unknowns/SKILL.md` as the main instruction document and allow the agent to read files under `references/` on demand.
-- **Repo-local usage**: keep this package in the repository and invoke it by path, for example `Use the workflow at know your unknowns/skills/finding-your-unknowns`.
-- **Whole-package installs**: copy the full `know your unknowns/` folder when your host supports package-level installation; this preserves the README, package-level LICENSE, skill instructions, and references together.
-
-For hosts that use a local skills directory, the copy command looks like:
+For skill-folder hosts, copy the skill directory:
 
 ```bash
 mkdir -p "<agent-skills-dir>"
-cp -R "know your unknowns/skills/finding-your-unknowns" "<agent-skills-dir>/"
+cp -R "finding-your-unknowns/skills/finding-your-unknowns" "<agent-skills-dir>/"
 ```
 
-Restart or reload the agent environment if it does not automatically rescan local workflows.
-
-## Usage
-
-Invoke it directly:
+For instruction-only agents, load:
 
 ```text
-Use finding-your-unknowns before planning this feature.
+skills/finding-your-unknowns/SKILL.md
 ```
 
-It should also trigger for prompts that are vague, strategic, high-stakes, unfamiliar, long-running, design-heavy, reference-based, or contradicted by codebase reality mid-implementation.
+For repo-local use, keep this repository in your project and invoke:
 
-## Example Prompts
+```text
+Use the workflow at finding-your-unknowns/skills/finding-your-unknowns before planning this feature.
+```
 
-Pre-implementation, unfamiliar module:
+## Examples
 
 ```text
 Use finding-your-unknowns. I need to add passkey login, but I have not worked in this auth module before.
 ```
 
-Pre-implementation, vague design:
-
 ```text
 Use finding-your-unknowns. Make this dashboard feel cleaner and more production-ready, but show me directions before wiring anything.
 ```
-
-Pre-implementation, known architecture ambiguity:
-
-```text
-Use finding-your-unknowns. I am unsure whether notification fanout belongs in the API request path or the worker queue.
-```
-
-Pre-implementation, reference-based implementation:
 
 ```text
 Use finding-your-unknowns. Recreate the retry semantics from vendor/rate-limiter in our TypeScript client, but prove you understood the reference first.
 ```
 
-During implementation:
-
 ```text
 Use finding-your-unknowns. The migration plan assumed one account per workspace, but the schema allows many.
 ```
-
-Post-implementation:
 
 ```text
 Use finding-your-unknowns. Explain this branch before merge and quiz me on the risks.
 ```
 
-## Major Workflow Phases
+## Package Layout
 
-- **Before implementation**: surface hidden constraints, clarify decision points, compare directions, or validate the shape before irreversible work.
-- **During implementation**: keep scoped implementation notes current when repo reality diverges from the plan.
-- **After implementation**: package the result for stakeholder understanding, reviewer buy-in, or pre-merge comprehension.
+```text
+finding-your-unknowns/
+  README.md
+  LICENSE
+  assets/
+    logo.svg
+  skills/
+    finding-your-unknowns/
+      LICENSE
+      SKILL.md
+      references/
+        <focused workflows loaded by SKILL.md>
+```
 
-`SKILL.md` is the canonical routing source for the current playbook list and when to load each reference.
+## Attribution
+
+Inspired by Thariq Shihipar's "A Field Guide to Fable: Finding Your
+Unknowns" and the companion examples:
+
+- [Article](https://x.com/trq212/status/2073100352921215386)
+- [Companion examples](https://thariqs.github.io/html-effectiveness/unknowns/)
+
+This package is an original agent workflow. Credit the framework when producing reusable artifacts; do not copy source text.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
