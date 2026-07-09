@@ -2,7 +2,7 @@
 description: Route under-specified, high-impact, or high-risk implementation work through Find Your Knowns before coding, even when the user does not name the uncertainty.
 globs:
   - "**/*"
-alwaysApply: false
+alwaysApply: true
 ---
 
 # Find Your Knowns
@@ -17,6 +17,9 @@ Load and follow:
 ```text
 skills/find-your-knowns/SKILL.md
 ```
+
+This rule is only a router. For tiny, direct, low-risk edits, do not load the
+full workflow; proceed normally after noting that unknowns are low-impact.
 
 Important boundaries:
 

@@ -90,7 +90,7 @@ Install details:
 
 - Claude Code, Codex/manual loading, Cursor, and instruction-only agents:
   [docs/install.md](docs/install.md)
-- Optional Cursor rule:
+- Cursor always-on router rule:
   [.cursor/rules/find-your-knowns.mdc](.cursor/rules/find-your-knowns.mdc)
 
 For instruction-only agents, load:

@@ -1,6 +1,6 @@
 ---
 name: find-your-knowns
-description: Turn hidden unknowns into actionable knowns before, during, and after implementation work. Use when the task itself is vague, under-specified, high-impact, high-risk, design-heavy, reference-based, long-running, or in an uninspected area, even if the user does not mention uncertainty. Do not use for ordinary code review, bug review, security review, or PR defect-finding requests.
+description: Turn hidden unknowns into actionable knowns before, during, and after implementation work. Use when the task itself is vague, under-specified, high-impact, high-risk, design-heavy, reference-based, long-running, or in an uninspected area, even if the user does not mention uncertainty. Strong implicit triggers include auth, permissions, billing, payments, migrations, schemas, data, APIs, integrations, security, deployment, performance, and UX redesign. Do not use for ordinary code review, bug review, security review, or PR defect-finding requests.
 ---
 
 # Find Your Knowns

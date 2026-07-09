@@ -1,6 +1,6 @@
 {
   "name": "find-your-knowns",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Agent-agnostic workflow skill for turning hidden unknowns into actionable knowns before implementation.",
   "bin": {
     "find-your-knowns": "bin/find-your-knowns.mjs"
