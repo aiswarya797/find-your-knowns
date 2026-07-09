@@ -45,8 +45,9 @@ Project-local setup:
 
 ```bash
 git clone https://github.com/aiswarya797/find-your-knowns.git
-mkdir -p .cursor/rules
+mkdir -p .cursor/rules skills
 cp find-your-knowns/.cursor/rules/find-your-knowns.mdc .cursor/rules/
+cp -R find-your-knowns/skills/find-your-knowns skills/
 ```
 
 Then in Cursor chat:

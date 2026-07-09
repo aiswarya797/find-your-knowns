@@ -30,10 +30,14 @@ function walk(dir) {
 const failures = [];
 for (const path of walk(root)) {
   if (!statSync(path).isFile()) continue;
+  const relativePath = relative(root, path);
   const content = readFileSync(path, "utf8");
   for (const pattern of forbidden) {
+    if (pattern.test(relativePath)) {
+      failures.push(`${relativePath} has stale slug in path ${pattern}`);
+    }
     if (pattern.test(content)) {
-      failures.push(`${relative(root, path)} contains stale slug ${pattern}`);
+      failures.push(`${relativePath} contains stale slug ${pattern}`);
     }
   }
 }
