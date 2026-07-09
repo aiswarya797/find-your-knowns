@@ -24,6 +24,8 @@ It helps agents find hidden requirements before they guess: unfamiliar codebase 
 
 The package uses one router skill plus focused reference workflows. The router lives at `skills/find-your-knowns/SKILL.md`; each workflow is loaded only when relevant.
 
+Source idea: Thariq Shihipar's public essay ["A Field Guide to Fable: Finding Your Unknowns"](https://x.com/trq212/status/2073100352921215386) and companion ["Know your unknowns"](https://thariqs.github.io/html-effectiveness/unknowns/) artifact gallery.
+
 ## Why Use It
 
 Use this skill when a coding task is vague, unfamiliar, high-stakes, design-heavy, reference-based, long-running, or expensive to redo.
@@ -56,7 +58,19 @@ Skip it for tiny direct changes, ordinary code review, bug review, security revi
 
 ## Install
 
-Fast path:
+Fast path with npm:
+
+```bash
+npx find-your-knowns install ~/.codex/skills
+```
+
+For Cursor projects:
+
+```bash
+npx find-your-knowns cursor .
+```
+
+Manual git path:
 
 ```bash
 git clone https://github.com/aiswarya797/find-your-knowns.git
@@ -145,6 +159,8 @@ find-your-knowns/
     install.md
   examples/
   templates/
+  bin/
+    find-your-knowns.mjs
   .cursor/rules/
   skills/
     find-your-knowns/
@@ -162,15 +178,15 @@ npm run validate
 
 Validation runs markdown lint, stale package-slug checks, and `git diff --check`.
 
-## Attribution
+## Source And Attribution
 
-Inspired by Thariq Shihipar's "A Field Guide to Fable: Finding Your
-Unknowns" and the companion examples:
+This package is an original implementation inspired by Thariq Shihipar's
+unknowns framing. Read the source material first if you want the full reasoning:
 
-- [Article](https://x.com/trq212/status/2073100352921215386)
-- [Companion examples](https://thariqs.github.io/html-effectiveness/unknowns/)
+- [A Field Guide to Fable: Finding Your Unknowns](https://x.com/trq212/status/2073100352921215386)
+- [Know your unknowns companion artifacts](https://thariqs.github.io/html-effectiveness/unknowns/)
 
-This package is an original agent workflow. Credit the framework when producing reusable artifacts; do not copy source text.
+The workflow text, templates, examples, package layout, and CLI here are original. Credit the source idea when producing reusable artifacts; do not copy Thariq's source text or artifacts.
 
 ## License
 

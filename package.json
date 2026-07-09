@@ -1,8 +1,22 @@
 {
   "name": "find-your-knowns",
   "version": "0.1.0",
-  "private": true,
-  "description": "Agent-agnostic workflow skill for surfacing hidden unknowns before implementation.",
+  "description": "Agent-agnostic workflow skill for turning hidden unknowns into actionable knowns before implementation.",
+  "bin": {
+    "find-your-knowns": "bin/find-your-knowns.mjs"
+  },
+  "files": [
+    ".cursor/rules",
+    "assets",
+    "bin",
+    "docs",
+    "examples",
+    "scripts",
+    "skills",
+    "templates",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
     "lint:md": "npx --yes markdownlint-cli2 \"**/*.md\" \"!node_modules\"",
     "check:slugs": "node scripts/check-stale-slugs.mjs",
@@ -16,5 +30,16 @@
     "unknowns",
     "planning"
   ],
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aiswarya797/find-your-knowns.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aiswarya797/find-your-knowns/issues"
+  },
+  "homepage": "https://github.com/aiswarya797/find-your-knowns#readme",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
 }

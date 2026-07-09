@@ -3,6 +3,27 @@
 Use the full skill when your agent supports skills. Use the instruction file
 directly when it does not.
 
+## NPM
+
+Install into the default Codex skills directory:
+
+```bash
+npx find-your-knowns install
+```
+
+Install into a specific agent skills directory:
+
+```bash
+npx find-your-knowns install "<agent-skills-dir>"
+```
+
+Install into a Cursor project:
+
+```bash
+cd your-project
+npx find-your-knowns cursor .
+```
+
 ## Claude Code
 
 Copy the skill folder into your Claude Code skills directory:
