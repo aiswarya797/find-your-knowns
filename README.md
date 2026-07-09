@@ -22,13 +22,15 @@
 
 It helps agents find hidden requirements before they guess: unfamiliar codebase constraints, vague product taste, risky API or data decisions, plan-vs-reality drift, reviewer objections, and merge-time understanding gaps.
 
+It does not require the user to know what they are missing. The trigger is the shape and blast radius of the task: under-specified implementation, auth, billing, migrations, data, APIs, security, UX taste, references, or large plans.
+
 The package uses one router skill plus focused reference workflows. The router lives at `skills/find-your-knowns/SKILL.md`; each workflow is loaded only when relevant.
 
 Source idea: Thariq Shihipar's public essay ["A Field Guide to Fable: Finding Your Unknowns"](https://x.com/trq212/status/2073100352921215386) and companion ["Know your unknowns"](https://thariqs.github.io/html-effectiveness/unknowns/) artifact gallery.
 
 ## Why Use It
 
-Use this skill when a coding task is vague, unfamiliar, high-stakes, design-heavy, reference-based, long-running, or expensive to redo.
+Use this skill when a coding task is vague, under-specified, high-stakes, design-heavy, reference-based, long-running, or expensive to redo.
 
 Skip it for tiny direct changes, ordinary code review, bug review, security review, and PR defect-finding. Those need review-specific methods, not unknown-discovery routing.
 

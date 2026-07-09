@@ -1,5 +1,5 @@
 ---
-description: Route vague or high-uncertainty implementation work through Find Your Knowns before coding.
+description: Route under-specified, high-impact, or high-risk implementation work through Find Your Knowns before coding, even when the user does not name the uncertainty.
 globs:
   - "**/*"
 alwaysApply: false
@@ -7,9 +7,10 @@ alwaysApply: false
 
 # Find Your Knowns
 
-Use this rule when a request is vague, unfamiliar, design-heavy, reference-based,
-high-risk, long-running, or likely to hide product, API, data, security, or
-operational constraints.
+Use this rule when a request is vague, under-specified, design-heavy,
+reference-based, high-risk, long-running, or likely to hide product, API, data,
+security, or operational constraints. Do not wait for the user to say they are
+uncertain; infer risk from the task shape and blast radius.
 
 Load and follow:
 
@@ -20,6 +21,8 @@ skills/find-your-knowns/SKILL.md
 Important boundaries:
 
 - Use Find Your Knowns to discover missing context before implementation.
+- Treat missing constraints, success criteria, edge cases, rollout expectations,
+  or quality bar as a trigger.
 - Do not use it as ordinary code review, bug review, security review, or PR
   defect finding.
 - Inspect the actual repo or product surface before ranking risks.

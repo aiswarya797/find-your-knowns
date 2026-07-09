@@ -1,6 +1,6 @@
 ---
 name: find-your-knowns
-description: Turn hidden unknowns into actionable knowns before, during, and after implementation work. Use for vague, high-uncertainty, unfamiliar, high-stakes, or long-running tasks where the agent may otherwise guess through missing context. Do not use for ordinary code review, bug review, security review, or PR defect-finding requests.
+description: Turn hidden unknowns into actionable knowns before, during, and after implementation work. Use when the task itself is vague, under-specified, high-impact, high-risk, design-heavy, reference-based, long-running, or in an uninspected area, even if the user does not mention uncertainty. Do not use for ordinary code review, bug review, security review, or PR defect-finding requests.
 ---
 
 # Find Your Knowns
@@ -11,9 +11,11 @@ Attribution: this is an original agent workflow inspired by Thariq Shihipar's ar
 
 ## Trigger Policy
 
-Use this workflow when the task is vague, aesthetic, strategic, high-stakes, unfamiliar, long-running, in an uninspected codebase area, or likely to hide product, design, API, security, data, migration, or operational constraints.
+Use this workflow when the task itself is vague, aesthetic, strategic, high-stakes, under-specified, long-running, in an uninspected codebase area, or likely to hide product, design, API, security, data, migration, or operational constraints. Do not wait for the user to say they are confused, novice, unfamiliar with the code, or unsure what to ask; novice users often cannot name the unknowns.
 
-Strong trigger phrases include "better", "cleaner", "nice", "intuitive", "production-ready", "you decide", and "like X". Also use it before creating a large implementation plan, when implementation reality contradicts the plan, or after implementation for reviewer/stakeholder buy-in, pre-merge explanation, or change-understanding workflows.
+Trigger from the shape and blast radius of the work. Strong signals include authentication, authorization, billing, payments, migrations, schemas, data loss, permissions, security, API contracts, integrations, deployment, performance, user-facing UX, visual redesign, and prompts like "better", "cleaner", "nice", "intuitive", "production-ready", "you decide", and "like X". Also use it before creating a large implementation plan, when implementation reality contradicts the plan, or after implementation for reviewer/stakeholder buy-in, pre-merge explanation, or change-understanding workflows.
+
+If a request asks for non-trivial implementation but omits success criteria, constraints, existing behavior, edge cases, rollout expectations, or quality bar, treat that missing specificity as a trigger.
 
 Do not use this workflow for ordinary code review, bug review, security review, or PR defect-finding requests. Those tasks need review-specific methods, not unknown-discovery routing. Keep this workflow lightweight or skip it entirely when the change is tiny, obvious, directly specified, low-impact, or cheaper to fix than to explore.
 
@@ -80,7 +82,7 @@ Unknowns check:
 
 ## Example Routing
 
-- **Unfamiliar codebase module**: "Add SSO to this auth package; I have not touched it before" -> `blindspot-pass.md`, then `tweakable-plan.md` if the risk is high.
+- **Implicit high-risk work**: "Add SSO to this auth package" -> `blindspot-pass.md`, then `tweakable-plan.md` if the risk is high.
 - **Vague design request**: "Make the review dashboard cleaner and more premium" -> `design-directions.md`, optionally `mock-before-wire.md`.
 - **Known architectural ambiguity**: "Should this live in the API gateway or worker?" -> `interview.md`, then `tweakable-plan.md`.
 - **Reference-based implementation**: "Port the retry behavior from this Rust crate into our TypeScript client" -> `reference-hunt.md`.
